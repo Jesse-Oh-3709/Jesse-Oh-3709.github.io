@@ -13,7 +13,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Add scroll effect to header
-let lastScroll = 0;
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
@@ -24,8 +23,6 @@ window.addEventListener('scroll', () => {
     } else {
         header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
     }
-    
-    lastScroll = currentScroll;
 });
 
 // Add animation on scroll for sections
