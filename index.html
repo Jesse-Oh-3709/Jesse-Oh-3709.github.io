@@ -189,6 +189,21 @@
       margin-top: 6px;
     }
 
+    .project-media{
+      margin: 12px 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+
+    .project-media img,
+    .project-media video{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
     footer{
       margin-top: 40px;
       padding-top: 18px;
@@ -266,6 +281,9 @@
         <p>
           Built a finite element analysis solver in Python and MATLAB for structural problems (2D/3D workflows). Supports truss, frame, and triangular elements with global stiffness assembly, boundary conditions, and post-processing (displacement/stress/strain) with visualization.
         </p>
+        <div class="project-media">
+          <img src="assets/images/deformed_mesh.png" alt="Finite element deformed mesh visualization" loading="lazy" />
+        </div>
         <div class="chips">
           <span class="chip">Python</span>
           <span class="chip">MATLAB</span>
@@ -302,6 +320,62 @@
           <span class="chip">SVM</span>
           <span class="chip">Computer Vision</span>
           <span class="chip">Model Selection</span>
+        </div>
+        <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project">
+        <h3>Email Automation Chrome Extension</h3>
+        <p>
+          Custom extension for a tutoring center that automates outbound email generation, scheduling, and syncing with Google Sheets (after ending my contract at Elite, I turned over my permissions to someone else, so I only have the Figma mock-ups, everything works correctly though, but I don't have the project on Github).
+        </p>
+        <div class="project-media">
+          <img src="assets/images/email_automation.png" alt="Email automation Chrome extension mockup" loading="lazy" />
+        </div>
+        <div class="chips">
+          <span class="chip">JavaScript</span>
+          <span class="chip">Gmail API</span>
+          <span class="chip">Apps Script</span>
+        </div>
+        <span class="btn">No public repo</span>
+      </div>
+
+      <div class="project">
+        <h3>Sports Betting AI Consensus Dashboard</h3>
+        <p>
+          A full-stack dashboard that aggregates sportsbook data (Odds API), generates consensus predictions using OpenAI/Gemini/Perplexity, and displays real-time line movements.
+        </p>
+        <div class="project-media">
+          <img src="assets/images/sports_arbitrage.png" alt="Sports betting AI consensus dashboard interface" loading="lazy" />
+        </div>
+        <div class="chips">
+          <span class="chip">Next.js</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Vercel</span>
+          <span class="chip">Odds API</span>
+          <span class="chip">OpenAI</span>
+          <span class="chip">Gemini</span>
+          <span class="chip">Perplexity</span>
+        </div>
+        <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project">
+        <h3>Gesture-Controlled Audio Plugin Interface</h3>
+        <p>
+          Built a React front-end for controlling audio parameters via hand-tracking. Interface includes real-time graphs, parameter sliders, and model-driven visual feedback.
+        </p>
+        <div class="project-media">
+          <video controls preload="metadata">
+            <source src="assets/videos/gesture-controlled-audio-plugin-interface.mov" type="video/quicktime" />
+          </video>
+        </div>
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">MediaPipe</span>
+          <span class="chip">JUCE</span>
+          <span class="chip">HISE</span>
+          <span class="chip">MIDI</span>
         </div>
         <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
       </div>
