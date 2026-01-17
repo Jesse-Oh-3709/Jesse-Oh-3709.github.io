@@ -161,6 +161,9 @@
 
     .project{
       grid-column: span 12;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
       padding: 18px;
       border-radius: var(--radius);
       border: 1px solid var(--line);
@@ -168,6 +171,11 @@
     }
 
     .project p{ color: var(--muted); }
+
+    .project-body{
+      flex: 1 1 auto;
+      min-width: 0;
+    }
 
     .chips{
       display: flex;
@@ -190,7 +198,9 @@
     }
 
     .project-media{
-      margin: 12px 0;
+      flex: 0 0 320px;
+      max-width: 320px;
+      margin: 0;
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--line);
@@ -217,7 +227,8 @@
 
     @media (max-width: 900px){
       .hero{ grid-template-columns: 1fr; }
-      .project{ grid-column: span 12; }
+      .project{ grid-column: span 12; flex-direction: column; }
+      .project-media{ max-width: 100%; width: 100%; }
     }
   </style>
 </head>
@@ -277,107 +288,103 @@
     <h2>Projects</h2>
     <div class="grid">
       <div class="project">
-        <h3>Finite Element Method (FEM) Solver</h3>
-        <p>
-          Built a finite element analysis solver in Python and MATLAB for structural problems (2D/3D workflows). Supports truss, frame, and triangular elements with global stiffness assembly, boundary conditions, and post-processing (displacement/stress/strain) with visualization.
-        </p>
+        <div class="project-body">
+          <h3>Gesture-Controlled Audio Plugin Interface</h3>
+          <p>
+            Built a React front-end for controlling audio parameters via hand-tracking. Interface includes real-time graphs, parameter sliders, and model-driven visual feedback.
+          </p>
+          <div class="chips">
+            <span class="chip">React</span>
+            <span class="chip">MediaPipe</span>
+            <span class="chip">JUCE</span>
+            <span class="chip">HISE</span>
+            <span class="chip">MIDI</span>
+          </div>
+          <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
+        </div>
         <div class="project-media">
-          <img src="assets/images/deformed_mesh.png" alt="Finite element deformed mesh visualization" loading="lazy" />
-        </div>
-        <div class="chips">
-          <span class="chip">Python</span>
-          <span class="chip">MATLAB</span>
-          <span class="chip">FEM</span>
-          <span class="chip">Numerical Methods</span>
-          <span class="chip">Structural Analysis</span>
-        </div>
-        <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>Gesture-Controlled Audio Effects</h3>
-        <p>
-          Developed a real-time computer vision system that maps hand gestures to MIDI controls for live audio effects. Includes low-latency gesture tracking, MIDI routing, and an FL Studio workflow with documentation and testing utilities.
-        </p>
-        <div class="chips">
-          <span class="chip">Python</span>
-          <span class="chip">Computer Vision</span>
-          <span class="chip">MIDI</span>
-          <span class="chip">Real-time</span>
-          <span class="chip">FL Studio</span>
-        </div>
-        <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>Parking Spot Image Classification</h3>
-        <p>
-          Trained an image classifier to label parking spots as empty vs. not empty using an SVC pipeline. Includes preprocessing, grid search hyperparameter tuning, model saving, and accuracy reporting.
-        </p>
-        <div class="chips">
-          <span class="chip">Python</span>
-          <span class="chip">Machine Learning</span>
-          <span class="chip">SVM</span>
-          <span class="chip">Computer Vision</span>
-          <span class="chip">Model Selection</span>
-        </div>
-        <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>Email Automation Chrome Extension</h3>
-        <p>
-          Custom extension for a tutoring center that automates outbound email generation, scheduling, and syncing with Google Sheets (after ending my contract at Elite, I turned over my permissions to someone else, so I only have the Figma mock-ups, everything works correctly though, but I don't have the project on Github).
-        </p>
-        <div class="project-media">
-          <img src="assets/images/email_automation.png" alt="Email automation Chrome extension mockup" loading="lazy" />
-        </div>
-        <div class="chips">
-          <span class="chip">JavaScript</span>
-          <span class="chip">Gmail API</span>
-          <span class="chip">Apps Script</span>
-        </div>
-        <span class="btn">No public repo</span>
-      </div>
-
-      <div class="project">
-        <h3>Sports Betting AI Consensus Dashboard</h3>
-        <p>
-          A full-stack dashboard that aggregates sportsbook data (Odds API), generates consensus predictions using OpenAI/Gemini/Perplexity, and displays real-time line movements.
-        </p>
-        <div class="project-media">
-          <img src="assets/images/sports_arbitrage.png" alt="Sports betting AI consensus dashboard interface" loading="lazy" />
-        </div>
-        <div class="chips">
-          <span class="chip">Next.js</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">Vercel</span>
-          <span class="chip">Odds API</span>
-          <span class="chip">OpenAI</span>
-          <span class="chip">Gemini</span>
-          <span class="chip">Perplexity</span>
-        </div>
-        <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>Gesture-Controlled Audio Plugin Interface</h3>
-        <p>
-          Built a React front-end for controlling audio parameters via hand-tracking. Interface includes real-time graphs, parameter sliders, and model-driven visual feedback.
-        </p>
-        <div class="project-media">
-          <video controls preload="metadata">
+          <video controls preload="metadata" playsinline>
+            <source src="assets/videos/gesture-controlled-audio-plugin-interface.mp4" type="video/mp4" />
             <source src="assets/videos/gesture-controlled-audio-plugin-interface.mov" type="video/quicktime" />
           </video>
         </div>
-        <div class="chips">
-          <span class="chip">React</span>
-          <span class="chip">MediaPipe</span>
-          <span class="chip">JUCE</span>
-          <span class="chip">HISE</span>
-          <span class="chip">MIDI</span>
+      </div>
+
+      <div class="project">
+        <div class="project-body">
+          <h3>Finite Element Method (FEM) Solver</h3>
+          <p>
+            Built a finite element analysis solver in Python and MATLAB for structural problems (2D/3D workflows). Supports truss, frame, and triangular elements with global stiffness assembly, boundary conditions, and post-processing (displacement/stress/strain) with visualization.
+          </p>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">MATLAB</span>
+            <span class="chip">FEM</span>
+            <span class="chip">Numerical Methods</span>
+            <span class="chip">Structural Analysis</span>
+          </div>
+          <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
         </div>
-        <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
+        <div class="project-media">
+          <img src="assets/images/deformed_mesh.png" alt="Finite element deformed mesh visualization" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-body">
+          <h3>Email Automation Chrome Extension</h3>
+          <p>
+            Custom extension for a tutoring center that automates outbound email generation, scheduling, and syncing with Google Sheets (after ending my contract at Elite, I turned over my permissions to someone else, so I only have the Figma mock-ups, everything works correctly though, but I don't have the project on Github).
+          </p>
+          <div class="chips">
+            <span class="chip">JavaScript</span>
+            <span class="chip">Gmail API</span>
+            <span class="chip">Apps Script</span>
+          </div>
+          <span class="btn">No public repo</span>
+        </div>
+        <div class="project-media">
+          <img src="assets/images/email_automation.png" alt="Email automation Chrome extension mockup" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-body">
+          <h3>Sports Betting AI Consensus Dashboard</h3>
+          <p>
+            A full-stack dashboard that aggregates sportsbook data (Odds API), generates consensus predictions using OpenAI/Gemini/Perplexity, and displays real-time line movements.
+          </p>
+          <div class="chips">
+            <span class="chip">Next.js</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">Vercel</span>
+            <span class="chip">Odds API</span>
+            <span class="chip">OpenAI</span>
+            <span class="chip">Gemini</span>
+            <span class="chip">Perplexity</span>
+          </div>
+          <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-media">
+          <img src="assets/images/sports_arbitrage.png" alt="Sports betting AI consensus dashboard interface" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-body">
+          <h3>Parking Spot Image Classification</h3>
+          <p>
+            Trained an image classifier to label parking spots as empty vs. not empty using an SVC pipeline. Includes preprocessing, grid search hyperparameter tuning, model saving, and accuracy reporting.
+          </p>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Machine Learning</span>
+            <span class="chip">SVM</span>
+            <span class="chip">Computer Vision</span>
+            <span class="chip">Model Selection</span>
+          </div>
+          <a class="btn" href="https://github.com/yourusername" target="_blank">View on GitHub</a>
+        </div>
       </div>
     </div>
   </section>
