@@ -1,403 +1,375 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jesse Oh — Portfolio</title>
-  <meta name="description" content="Personal portfolio of Jesse Oh." />
+<!DOCTYPE html>
 
-  <style>
-    :root{
-      --bg: #0b0f17;          /* constant background */
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.08);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.65);
-      --line: rgba(255,255,255,.12);
-      --accent: #7c5cff;
-      --accent2:#00d4ff;
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
-      --radius: 18px;
-      --max: 1100px;
-    }
-
-    *{ box-sizing: border-box; }
-    html, body{ height: 100%; }
-
-    body{
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--text);
-      background: var(--bg);   /* solid color only */
-      line-height: 1.5;
-    }
-
-    a{ color: inherit; text-decoration: none; }
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 80px; }
-
-    /* NAV */
-    header{
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
-      background: rgba(11,15,23,.8);
-      border-bottom: 1px solid var(--line);
-      z-index: 10;
-    }
-
-    .nav{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-    }
-
-    .logo{
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-    }
-
-    nav ul{
-      list-style: none;
-      display: flex;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a{
-      padding: 9px 12px;
-      border-radius: 12px;
-      color: var(--muted);
-    }
-
-    nav a:hover{ color: var(--text); }
-
-    .btn{
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      cursor: pointer;
-    }
-
-    .btn.primary{
-      border: none;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-    }
-
-    /* HERO */
-    .hero{
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 22px;
-      padding: 46px 0 18px;
-    }
-
-    .card{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-main{
-      padding: 28px;
-    }
-
-    h1{
-      margin: 0 0 10px;
-      font-size: clamp(30px, 4vw, 46px);
-    }
-
-    .tagline{
-      color: var(--muted);
-      max-width: 60ch;
-    }
-
-    .pill-row{
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 18px 0;
-    }
-
-    .pill{
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .hero-actions{
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-
-    /* SECTIONS */
-    section{ padding-top: 30px; }
-
-    h2{ margin: 0 0 6px; }
-
-    .grid{
-      display: grid;
-      grid-template-columns: repeat(12,1fr);
-      gap: 14px;
-    }
-
-    .project{
-      grid-column: span 12;
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      padding: 18px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.05);
-    }
-
-    .project p{ color: var(--muted); }
-
-    .project-body{
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-
-    .chips{
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-
-    .chip{
-      font-size: 12px;
-      padding: 6px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--muted);
-    }
-
-    .project .btn{
-      display: inline-block;
-      margin-top: 6px;
-    }
-
-    .project-media{
-      flex: 0 0 320px;
-      max-width: 320px;
-      margin: 0;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-    }
-
-    .project-media img,
-    .project-media video{
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    footer{
-      margin-top: 40px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-      .project{ grid-column: span 12; flex-direction: column; }
-      .project-media{ max-width: 100%; width: 100%; }
-    }
-  </style>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jesse Oh — Portfolio</title>
+<meta name="description" content="Personal portfolio of Jesse Oh — computational mechanics, robotics, and data-driven systems."/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "tertiary-fixed-dim": "#b5c2ef",
+          "error-container": "#f56965",
+          "secondary-dim": "#4f5d37",
+          "tertiary-container": "#c3d0fe",
+          "tertiary": "#56638b",
+          "primary-fixed-dim": "#ff987b",
+          "surface": "#fffcf0",
+          "on-tertiary": "#ffffff",
+          "on-primary-container": "#731e03",
+          "on-secondary": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-secondary-fixed": "#3b4925",
+          "surface-container": "#f5f5e1",
+          "outline": "#80826a",
+          "on-tertiary-fixed": "#263357",
+          "primary": "#a94528",
+          "tertiary-fixed": "#c3d0fe",
+          "background": "#fffcf0",
+          "on-tertiary-fixed-variant": "#424f76",
+          "on-surface-variant": "#646650",
+          "surface-container-low": "#fbfaea",
+          "primary-fixed": "#ffad96",
+          "surface-variant": "#e9eace",
+          "primary-dim": "#99391d",
+          "secondary-fixed": "#e0f2c0",
+          "surface-bright": "#fffcf0",
+          "on-surface": "#373926",
+          "surface-container-lowest": "#ffffff",
+          "tertiary-dim": "#4a577e",
+          "secondary-fixed-dim": "#d2e3b3",
+          "on-primary-fixed": "#501000",
+          "secondary-container": "#e0f2c0",
+          "inverse-on-surface": "#9e9d93",
+          "on-error": "#ffffff",
+          "surface-container-high": "#efefd7",
+          "surface-container-highest": "#e9eace",
+          "inverse-surface": "#0e0f08",
+          "secondary": "#5a6a42",
+          "outline-variant": "#babba1",
+          "on-background": "#373926",
+          "on-error-container": "#65000b",
+          "surface-tint": "#a94528",
+          "on-primary-fixed-variant": "#7f270b",
+          "on-secondary-container": "#4d5c36",
+          "surface-dim": "#e3e5c3",
+          "on-tertiary-container": "#39466c",
+          "error-dim": "#70030f",
+          "primary-container": "#ffad96",
+          "inverse-primary": "#fc8361",
+          "error": "#b33938",
+          "on-secondary-fixed-variant": "#57663f"
+        },
+        fontFamily: {
+          "headline": ["Epilogue"],
+          "body": ["Inter"],
+          "label": ["Epilogue"]
+        },
+        borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body {
+    background-color: #fffcf0;
+    color: #373926;
+    font-family: 'Inter', sans-serif;
+  }
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+  }
+</style>
 </head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 
-<body>
-<header>
-  <div class="nav">
-    <div class="brand">
-      <div class="logo"></div>
-      <span>Jesse Oh</span>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-none bg-opacity-80 backdrop-blur-md bg-[#fffcf0] dark:bg-slate-950">
+  <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+    <div class="text-2xl font-black tracking-tighter text-[#373926] dark:text-[#fffcf0] font-headline">
+      Jesse Oh
     </div>
-
-    <nav>
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <a class="btn" href="https://github.com/yourusername" target="_blank">GitHub</a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#a94528] border-b-2 border-[#a94528] pb-1" href="#projects">Projects</a>
+      <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#373926] dark:text-slate-300 hover:text-[#a94528] transition-colors" href="#about">About</a>
+      <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#373926] dark:text-slate-300 hover:text-[#a94528] transition-colors" href="#contact">Contact</a>
+      <a class="font-headline font-bold tracking-tight text-sm uppercase text-[#373926] dark:text-slate-300 hover:text-[#a94528] transition-colors" href="https://github.com/Jesse-Oh-3709" target="_blank">GitHub</a>
+    </div>
+    <div class="flex gap-4 items-center">
+      <a href="assets/JesseOh_Resume.pdf" download class="hover:opacity-70 transition-opacity duration-300 active:scale-95 text-[#a94528] flex items-center gap-1 font-headline font-bold text-sm uppercase tracking-widest">
+        <span class="material-symbols-outlined">download</span> Resume
+      </a>
+    </div>
   </div>
-</header>
+</nav>
 
-<main class="wrap">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="card hero-main">
-      <h1>Hi, I’m <span style="color:var(--accent)">Jesse Oh</span>.</h1>
-      <p class="tagline"></p>
+<main class="pt-32 px-8 max-w-screen-2xl mx-auto">
 
-      <div class="pill-row">
-        <span class="pill">📍 Los Angeles, CA</span>
-        <span class="pill">📍 Austin, TX</span>
-        <span class="pill">🧠 ML / Data</span>
-        <span class="pill">⚙️ Full-stack</span>
+  <!-- Hero Section -->
+  <header class="editorial-grid mb-24 items-end">
+    <div class="col-span-12 lg:col-span-8">
+      <h1 class="font-headline font-black text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] tracking-tighter mb-8 text-on-surface">
+        ENGINEERING<br/>PRECISION.
+      </h1>
+      <div class="flex flex-col md:flex-row md:items-center gap-6 mt-12">
+        <div class="bg-primary px-6 py-4">
+          <p class="font-headline font-bold text-on-primary text-xl uppercase tracking-widest">Jesse Oh</p>
+        </div>
+        <div class="border-l-4 border-secondary pl-6 max-w-md">
+          <p class="text-on-surface-variant font-medium leading-relaxed">
+            Computational mechanics and data-driven systems engineered for clinical precision. Based in <span class="text-primary font-bold">LA / Austin</span>.
+          </p>
+        </div>
       </div>
+      <div class="flex gap-4 mt-8 flex-wrap">
+        <a href="#projects" class="bg-primary text-on-primary px-6 py-3 font-headline font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity">View Projects</a>
+        <a href="assets/JesseOh_Resume.pdf" download class="border-2 border-primary text-primary px-6 py-3 font-headline font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">Resume</a>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-4 mt-12 lg:mt-0">
+      <div class="relative aspect-square overflow-hidden bg-surface-container-highest flex items-center justify-center">
+        <span class="font-headline font-black text-[8rem] text-primary/20 select-none leading-none">JO</span>
+        <div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-sm p-4 flex justify-between items-center">
+          <span class="font-label font-bold text-xs uppercase tracking-tighter">Based in LA / Austin</span>
+          <span class="material-symbols-outlined text-primary">location_on</span>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      <div class="hero-actions">
-        <a class="btn primary" href="#projects">View projects</a>
-        <a class="btn" href="assets/images/JesseOh_Resume.pdf" download>Download resume</a>
+  <!-- Project 01 — Human-Cobot Proximity Pipeline -->
+  <section id="projects" class="mb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+      <div class="lg:col-span-7 bg-primary-container p-12 flex flex-col justify-between order-2 lg:order-1">
+        <div>
+          <span class="font-label font-bold text-on-primary-fixed-variant text-sm tracking-[0.2em] uppercase mb-4 block">01 / AI &amp; Robotics</span>
+          <h2 class="font-headline font-extrabold text-4xl md:text-6xl text-on-primary-container tracking-tighter leading-none mb-4">Human-Cobot Proximity Pipeline</h2>
+          <p class="font-label font-bold text-on-primary-fixed-variant/60 text-xs uppercase tracking-[0.2em] mb-8">CogniEdge AI</p>
+          <p class="text-lg text-on-primary-fixed-variant mb-12 leading-relaxed">Developed a real-time human-cobot proximity and awareness pipeline on an NVIDIA Jetson Orin for CogniEdge's CEDR framework — a neuroadaptive human-robot collaboration system targeting EV battery assembly lines. Work included deploying and validating a YOLO person-detection model on CUDA, building a blink-detection module with RealSense camera integration (resolving a zombie process blocking the device), and training a custom YOLOv8n letter-detection model on 31 annotated Roboflow images for 100 epochs (~18 min on Jetson GPU), achieving 90% precision and exporting as a TensorRT engine. Also contributed to a React/Node.js telemetry dashboard visualizing live pipeline outputs.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 items-center">
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Python</span>
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">YOLOv8</span>
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">TensorRT</span>
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">CUDA</span>
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Jetson Orin</span>
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">RealSense</span>
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">React</span>
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Node.js</span>
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Roboflow</span>
+          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Digital Twins</span>
+          <span class="ml-auto font-label font-bold text-on-primary-container/50 text-xs uppercase tracking-tight">Industry Project — CogniEdge AI</span>
+        </div>
+      </div>
+      <div class="lg:col-span-5 order-1 lg:order-2 flex flex-col bg-[#1a1a1a]">
+        <video class="w-full h-auto" autoplay loop muted playsinline style="display:block;">
+          <source src="assets/videos/cogniedge-clip.mp4" type="video/mp4"/>
+        </video>
+        <img alt="CogniEdge annotation" src="assets/images/cogniedge-annotation.jpg" loading="lazy" style="width:100%;max-height:160px;object-fit:cover;object-position:center;display:block;"/>
+        <img alt="CogniEdge metrics" src="assets/images/cogniedge-metrics.jpg" loading="lazy" style="width:100%;max-height:160px;object-fit:cover;object-position:center;display:block;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 02 — Gesture-Controlled Audio Plugin Interface -->
+  <section class="mb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+      <div class="lg:col-span-7 bg-secondary-container p-12 flex flex-col justify-between order-2 lg:order-1">
+        <div>
+          <span class="font-label font-bold text-on-secondary-container text-sm tracking-[0.2em] uppercase mb-4 block">02 / Interactive Systems</span>
+          <h2 class="font-headline font-extrabold text-4xl md:text-6xl text-on-secondary-container tracking-tighter leading-none mb-8">Gesture-Controlled Audio Plugin Interface</h2>
+          <p class="text-lg text-on-secondary-container max-w-xl mb-12 leading-relaxed">Built a React front-end for controlling audio parameters via hand-tracking. Includes real-time graphs, parameter sliders, and model-driven visual feedback.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 items-center">
+          <span class="bg-secondary text-on-secondary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">React</span>
+          <span class="bg-secondary text-on-secondary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">MediaPipe</span>
+          <span class="bg-secondary text-on-secondary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">JUCE</span>
+          <span class="bg-secondary text-on-secondary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">HISE</span>
+          <span class="bg-secondary text-on-secondary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">MIDI</span>
+          <a class="ml-auto flex items-center gap-2 font-label font-bold text-on-secondary-container hover:underline" href="https://github.com/Jesse-Oh-3709/gesture-controlled-audio-effects" target="_blank">
+            <span class="material-symbols-outlined">code</span> GitHub
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 order-1 lg:order-2 bg-[#373926]">
+        <video class="w-full h-auto" autoplay muted loop playsinline>
+          <source src="assets/videos/gesture-controlled-audio-plugin-interface.mp4" type="video/mp4"/>
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 03 — Battle Bot -->
+  <section class="mb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+      <div class="lg:col-span-7 bg-tertiary-container p-12 flex flex-col justify-between order-2 lg:order-1">
+        <div>
+          <span class="font-label font-bold text-on-tertiary-container text-sm tracking-[0.2em] uppercase mb-4 block">03 / Mechanical Engineering</span>
+          <h2 class="font-headline font-extrabold text-4xl md:text-6xl text-on-tertiary-container tracking-tighter leading-none mb-4">Battle Bot</h2>
+          <p class="font-label font-bold text-on-tertiary-container/60 text-xs uppercase tracking-[0.2em] mb-8">ME 302/210 — UT Austin</p>
+          <p class="text-lg text-on-tertiary-container max-w-xl mb-12 leading-relaxed">Designed and fabricated a 3-wheeled combat robot for UT Austin's Engineering Design &amp; Graphics course. Built on a laser-cut plywood baseplate with two direct-drive motors, differential steering, and a 3D-printed shell with passive weapon attachments. Components include a Flysky RC controller, dual ESCs, and a 7.4V LiPo battery pack. Fit within a 10″×10″×10″ envelope.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 items-center">
+          <span class="bg-tertiary text-on-tertiary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">SolidWorks</span>
+          <span class="bg-tertiary text-on-tertiary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">3D Printing</span>
+          <span class="bg-tertiary text-on-tertiary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Laser Cutting</span>
+          <span class="bg-tertiary text-on-tertiary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">CAD/CAM</span>
+          <span class="bg-tertiary text-on-tertiary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Fabrication</span>
+          <span class="bg-tertiary text-on-tertiary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Embedded Systems</span>
+          <span class="ml-auto font-label font-bold text-on-tertiary-container/50 text-xs uppercase tracking-tight">Course Project — UT Austin</span>
+        </div>
+      </div>
+      <div class="lg:col-span-5 order-1 lg:order-2 flex flex-col bg-[#1a1a1a]">
+        <video class="w-full h-auto" autoplay loop muted playsinline>
+          <source src="assets/videos/battle-bot-demo.mp4" type="video/mp4"/>
+        </video>
+        <div class="flex flex-row">
+          <img alt="Battle bot exterior" class="w-1/2 h-auto object-cover" src="assets/images/battle-bot-exterior.jpg" loading="lazy"/>
+          <img alt="Battle bot interior" class="w-1/2 h-auto object-cover" src="assets/images/battle-bot-interior.jpg" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects 02 / 03 / 04 — Asymmetric Bento -->
+  <section class="mb-24 grid grid-cols-1 md:grid-cols-12 gap-6">
+
+    <!-- Project 02 — FEM Solver -->
+    <div class="md:col-span-5 bg-secondary-container p-12 flex flex-col justify-between h-[600px]">
+      <div class="h-64 mb-8 overflow-hidden">
+        <img alt="Finite element deformed mesh visualization" class="w-full h-full object-cover mix-blend-multiply opacity-80" src="assets/images/deformed_mesh.png" loading="lazy"/>
+      </div>
+      <div>
+        <span class="font-label font-bold text-on-secondary-container text-sm tracking-[0.2em] uppercase mb-4 block">04 / Computational Mechanics</span>
+        <h3 class="font-headline font-bold text-3xl text-on-secondary-container leading-tight mb-6">Finite Element Method (FEM) Solver</h3>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="text-[10px] font-bold border border-on-secondary-container/30 px-3 py-1 uppercase">Python</span>
+          <span class="text-[10px] font-bold border border-on-secondary-container/30 px-3 py-1 uppercase">MATLAB</span>
+          <span class="text-[10px] font-bold border border-on-secondary-container/30 px-3 py-1 uppercase">FEM</span>
+          <span class="text-[10px] font-bold border border-on-secondary-container/30 px-3 py-1 uppercase">Numerical Methods</span>
+        </div>
+        <a class="flex items-center gap-2 font-label font-bold text-on-secondary-container group" href="https://github.com/Jesse-Oh-3709/FiniteElementSolver" target="_blank">
+          VIEW REPOSITORY <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span>
+        </a>
       </div>
     </div>
 
-    <div class="card hero-main">
-      <p><b>Focus</b></p>
-      <p class="tagline">
-        Computational mechanics and data-driven systems engineered for clinical precision. I specialize in bridging the gap between high-fidelity numerical analysis and robotic-assisted surgery, leveraging solver validation and predictive modeling to redefine the boundaries of patient-specific diagnostics.
+    <div class="md:col-span-7 flex flex-col gap-6">
+      <!-- Project 03 — Sports Betting AI -->
+      <div class="bg-tertiary-container p-12 flex flex-col md:flex-row gap-8 flex-1 items-center">
+        <div class="flex-1">
+          <span class="font-label font-bold text-on-tertiary-container text-sm tracking-[0.2em] uppercase mb-2 block">05 / Full Stack</span>
+          <h3 class="font-headline font-bold text-3xl text-on-tertiary-container leading-tight mb-4">Sports Betting AI Consensus Dashboard</h3>
+          <p class="text-on-tertiary-container/70 text-sm mb-4">Aggregates sportsbook data, generates consensus predictions using OpenAI / Gemini / Perplexity, and displays real-time line movements.</p>
+          <div class="flex gap-3 flex-wrap mb-4">
+            <span class="text-[10px] font-bold text-on-tertiary-container/70 uppercase">Next.js / TypeScript / Vercel / Odds API</span>
+          </div>
+          <a class="flex items-center gap-2 font-label font-bold text-on-tertiary-container text-sm group" href="https://github.com/Jesse-Oh-3709/sports-arbitrage" target="_blank">
+            VIEW REPOSITORY <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">east</span>
+          </a>
+        </div>
+        <div class="w-full md:w-56 shrink-0 bg-surface/40">
+          <img alt="Sports betting AI consensus dashboard interface" class="w-full h-auto object-contain" src="assets/images/sports_arbitrage.png" loading="lazy"/>
+        </div>
+      </div>
+
+      <!-- Project 04 — Parking Classification -->
+      <div class="bg-surface-container-highest p-12 flex flex-col md:flex-row-reverse gap-8 flex-1 items-center">
+        <div class="flex-1">
+          <span class="font-label font-bold text-on-surface text-sm tracking-[0.2em] uppercase mb-2 block">06 / Machine Learning</span>
+          <h3 class="font-headline font-bold text-3xl text-on-surface leading-tight mb-4">Parking Spot Image Classification</h3>
+          <p class="text-on-surface-variant text-sm mb-6">Trained an SVC pipeline to classify parking spots as occupied or empty, with grid search hyperparameter tuning and accuracy reporting.</p>
+          <a class="flex items-center gap-2 font-label font-bold text-primary text-sm group" href="https://github.com/Jesse-Oh-3709/Parking_Spot_Image_Classification" target="_blank">
+            VIEW REPOSITORY <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">east</span>
+          </a>
+        </div>
+        <div class="w-full md:w-56 shrink-0">
+          <img alt="Parking spot classification bounding boxes" class="w-full h-auto object-contain" src="assets/images/thumbnail1761262610224.png" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 05 — Email Automation Chrome Extension (Full Width) -->
+  <section class="mb-24">
+    <div class="bg-[#373926] p-12 md:p-24 text-surface relative overflow-hidden">
+      <div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-12">
+        <div class="max-w-2xl">
+          <span class="font-label font-bold text-secondary-fixed text-sm tracking-[0.3em] uppercase mb-6 block">07 / Automation</span>
+          <h2 class="font-headline font-black text-5xl md:text-7xl tracking-tighter leading-none mb-8">Email Automation Chrome Extension</h2>
+          <p class="text-surface/70 text-lg leading-relaxed mb-8">Custom extension for a tutoring center that automates outbound email generation, scheduling, and syncing with Google Sheets. Permissions turned over at end of contract — Figma mock-ups available.</p>
+          <div class="flex gap-6 flex-wrap">
+            <span class="text-xs font-bold tracking-widest text-secondary-fixed">JAVASCRIPT</span>
+            <span class="text-xs font-bold tracking-widest text-secondary-fixed">GMAIL API</span>
+            <span class="text-xs font-bold tracking-widest text-secondary-fixed">APPS SCRIPT</span>
+          </div>
+        </div>
+        <div class="shrink-0 w-72 border border-surface/20">
+          <img alt="Email automation Chrome extension mockup" class="w-full h-auto object-contain opacity-80" src="assets/images/email_automation.png" loading="lazy"/>
+        </div>
+      </div>
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="mb-24 pt-8 border-t border-outline-variant/20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+      <div class="md:col-span-4">
+        <span class="font-label font-bold text-on-surface-variant text-sm tracking-[0.2em] uppercase mb-4 block">About</span>
+        <h2 class="font-headline font-black text-5xl tracking-tighter text-on-surface leading-none">Jesse Oh</h2>
+      </div>
+      <div class="md:col-span-8 flex flex-col gap-10">
+        <!-- Engineering -->
+        <div>
+          <p class="text-on-surface-variant text-lg leading-relaxed">
+            Engineer focused on computational mechanics, data-driven systems, and robotic-assisted surgery — bridging high-fidelity numerical analysis with predictive modeling to push the boundaries of patient-specific diagnostics. Currently based between <span class="text-on-surface font-semibold">Los Angeles</span> and <span class="text-on-surface font-semibold">Austin</span>.
+          </p>
+        </div>
+        <!-- Music -->
+        <div class="border-l-2 border-secondary pl-8">
+          <span class="font-label font-bold text-secondary text-xs tracking-[0.2em] uppercase mb-3 block">Creative</span>
+          <p class="text-on-surface-variant leading-relaxed">
+            The same analytical brain that reverse-engineers systems also reverse-engineers sound. As a self-taught producer working in Ableton Live, Pro Tools, and iZotope RX 11 — with a grounding in signal flow, gain staging, and audio repair — Jesse applies engineering precision to electronic music spanning House, Techno, and Festival EDM, as well as more textural, organic work. He also plays nylon string guitar by ear.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-16 px-8 mt-20 bg-[#fbfaea] dark:bg-slate-900 border-none">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-screen-2xl mx-auto">
+    <div class="text-lg font-bold text-[#373926] dark:text-[#fffcf0] font-headline">Jesse Oh</div>
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex gap-8">
+        <a class="font-headline font-medium text-[11px] tracking-widest uppercase text-[#373926]/60 hover:text-[#a94528] transition-all hover:underline decoration-2 underline-offset-4" href="https://github.com/Jesse-Oh-3709" target="_blank">GitHub</a>
+        <a class="font-headline font-medium text-[11px] tracking-widest uppercase text-[#373926]/60 hover:text-[#a94528] transition-all hover:underline decoration-2 underline-offset-4" href="assets/JesseOh_Resume.pdf" download>Resume</a>
+      </div>
+      <p class="font-headline font-medium text-[11px] tracking-widest uppercase text-[#373926]/40">
+        © <span id="year"></span> Jesse Oh. All rights reserved.
       </p>
     </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="project">
-        <div class="project-body">
-          <h3>Gesture-Controlled Audio Plugin Interface</h3>
-          <p>
-            Built a React front-end for controlling audio parameters via hand-tracking. Interface includes real-time graphs, parameter sliders, and model-driven visual feedback.
-          </p>
-          <div class="chips">
-            <span class="chip">React</span>
-            <span class="chip">MediaPipe</span>
-            <span class="chip">JUCE</span>
-            <span class="chip">HISE</span>
-            <span class="chip">MIDI</span>
-          </div>
-          <a class="btn" href="https://github.com/Jesse-Oh-3709/gesture-controlled-audio-effects" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-media">
-          <video controls preload="metadata" playsinline>
-            <source src="assets/videos/gesture-controlled-audio-plugin-interface.mp4" type="video/mp4" />
-            <source src="assets/videos/gesture-controlled-audio-plugin-interface.mov" type="video/quicktime" />
-          </video>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-body">
-          <h3>Finite Element Method (FEM) Solver</h3>
-          <p>
-            Built a finite element analysis solver in Python and MATLAB for structural problems (2D/3D workflows). Supports truss, frame, and triangular elements with global stiffness assembly, boundary conditions, and post-processing (displacement/stress/strain) with visualization.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">MATLAB</span>
-            <span class="chip">FEM</span>
-            <span class="chip">Numerical Methods</span>
-            <span class="chip">Structural Analysis</span>
-          </div>
-          <a class="btn" href="https://github.com/Jesse-Oh-3709/FiniteElementSolver" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-media">
-          <img src="assets/images/deformed_mesh.png" alt="Finite element deformed mesh visualization" loading="lazy" />
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-body">
-          <h3>Email Automation Chrome Extension</h3>
-          <p>
-            Custom extension for a tutoring center that automates outbound email generation, scheduling, and syncing with Google Sheets (after ending my contract at Elite, I turned over my permissions to someone else, so I only have the Figma mock-ups, everything works correctly though, but I don't have the project on Github).
-          </p>
-          <div class="chips">
-            <span class="chip">JavaScript</span>
-            <span class="chip">Gmail API</span>
-            <span class="chip">Apps Script</span>
-          </div>
-          <span class="btn">No public repo</span>
-        </div>
-        <div class="project-media">
-          <img src="assets/images/email_automation.png" alt="Email automation Chrome extension mockup" loading="lazy" />
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-body">
-          <h3>Sports Betting AI Consensus Dashboard</h3>
-          <p>
-            A full-stack dashboard that aggregates sportsbook data (Odds API), generates consensus predictions using OpenAI/Gemini/Perplexity, and displays real-time line movements.
-          </p>
-          <div class="chips">
-            <span class="chip">Next.js</span>
-            <span class="chip">TypeScript</span>
-            <span class="chip">Vercel</span>
-            <span class="chip">Odds API</span>
-            <span class="chip">OpenAI</span>
-            <span class="chip">Gemini</span>
-            <span class="chip">Perplexity</span>
-          </div>
-          <a class="btn" href="https://github.com/Jesse-Oh-3709/sports-arbitrage" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-media">
-          <img src="assets/images/sports_arbitrage.png" alt="Sports betting AI consensus dashboard interface" loading="lazy" />
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-body">
-          <h3>Parking Spot Image Classification</h3>
-          <p>
-            Trained an image classifier to label parking spots as empty vs. not empty using an SVC pipeline. Includes preprocessing, grid search hyperparameter tuning, model saving, and accuracy reporting.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">Machine Learning</span>
-            <span class="chip">SVM</span>
-            <span class="chip">Computer Vision</span>
-            <span class="chip">Model Selection</span>
-          </div>
-          <a class="btn" href="https://github.com/Jesse-Oh-3709/Parking_Spot_Image_Classification" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-media">
-          <img src="assets/images/thumbnail1761262610224.png" alt="Parking spot classification bounding boxes" loading="lazy" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <span>© <span id="year"></span> Jesse Oh</span>
-    <span>Built with HTML & CSS</span>
-  </footer>
-</main>
+    <button class="group flex items-center gap-2 text-[#a94528] font-headline font-bold text-[11px] uppercase tracking-widest" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      Back to top <span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform">north</span>
+    </button>
+  </div>
+</footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-</body>
-</html>
+</body></html>

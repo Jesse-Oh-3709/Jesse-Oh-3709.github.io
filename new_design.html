@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#b5c2ef",
+              "error-container": "#f56965",
+              "secondary-dim": "#4f5d37",
+              "tertiary-container": "#c3d0fe",
+              "tertiary": "#56638b",
+              "primary-fixed-dim": "#ff987b",
+              "surface": "#fffcf0",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#731e03",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#3b4925",
+              "surface-container": "#f5f5e1",
+              "outline": "#80826a",
+              "on-tertiary-fixed": "#263357",
+              "primary": "#a94528",
+              "tertiary-fixed": "#c3d0fe",
+              "background": "#fffcf0",
+              "on-tertiary-fixed-variant": "#424f76",
+              "on-surface-variant": "#646650",
+              "surface-container-low": "#fbfaea",
+              "primary-fixed": "#ffad96",
+              "surface-variant": "#e9eace",
+              "primary-dim": "#99391d",
+              "secondary-fixed": "#e0f2c0",
+              "surface-bright": "#fffcf0",
+              "on-surface": "#373926",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-dim": "#4a577e",
+              "secondary-fixed-dim": "#d2e3b3",
+              "on-primary-fixed": "#501000",
+              "secondary-container": "#e0f2c0",
+              "inverse-on-surface": "#9e9d93",
+              "on-error": "#ffffff",
+              "surface-container-high": "#efefd7",
+              "surface-container-highest": "#e9eace",
+              "inverse-surface": "#0e0f08",
+              "secondary": "#5a6a42",
+              "outline-variant": "#babba1",
+              "on-background": "#373926",
+              "on-error-container": "#65000b",
+              "surface-tint": "#a94528",
+              "on-primary-fixed-variant": "#7f270b",
+              "on-secondary-container": "#4d5c36",
+              "surface-dim": "#e3e5c3",
+              "on-tertiary-container": "#39466c",
+              "error-dim": "#70030f",
+              "primary-container": "#ffad96",
+              "inverse-primary": "#fc8361",
+              "error": "#b33938",
+              "on-secondary-fixed-variant": "#57663f"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Inter"],
+              "label": ["Epilogue"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #fffcf0;
+        color: #373926;
+        font-family: 'Inter', sans-serif;
+      }
+      .editorial-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-none bg-opacity-80 backdrop-blur-md bg-[#fffcf0] dark:bg-slate-950">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#373926] dark:text-[#fffcf0] font-headline">
+                Jesse Oh
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#a94528] border-b-2 border-[#a94528] pb-1" href="#">Projects</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#373926] dark:text-slate-300 hover:text-[#a94528] transition-colors" href="#">About</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#373926] dark:text-slate-300 hover:text-[#a94528] transition-colors" href="#">Contact</a>
+<a class="font-headline font-bold tracking-tight text-sm uppercase text-[#373926] dark:text-slate-300 hover:text-[#a94528] transition-colors" href="#">GitHub</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="hover:opacity-70 transition-opacity duration-300 active:scale-95 text-[#a94528]">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300 active:scale-95 text-[#a94528]">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 px-8 max-w-screen-2xl mx-auto">
+<!-- Hero Section -->
+<header class="editorial-grid mb-24 items-end">
+<div class="col-span-12 lg:col-span-8">
+<h1 class="font-headline font-black text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] tracking-tighter mb-8 text-on-surface">
+                    ENGINEERING<br/>PRECISION.
+                </h1>
+<div class="flex flex-col md:flex-row md:items-center gap-6 mt-12">
+<div class="bg-primary px-6 py-4">
+<p class="font-headline font-bold text-on-primary text-xl uppercase tracking-widest">Jesse Oh</p>
+</div>
+<div class="border-l-4 border-secondary pl-6 max-w-md">
+<p class="text-on-surface-variant font-medium leading-relaxed">
+                            Computational mechanics and data-driven systems engineered for clinical precision. Based in <span class="text-primary font-bold">LA/Austin</span>.
+                        </p>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 mt-12 lg:mt-0">
+<div class="relative group aspect-square overflow-hidden bg-surface-container-highest">
+<img alt="Portrait of Jesse Oh" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Professional portrait of Jesse Oh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmytbm7ZgHJ85-KQmviHEQivOfjqhlO6Z3zSS8WO3EuDbb6avpwtSURLWy6gtX3UzmJhuEiUp90S8YsOdid5W_WOACIDHUVH5ljwWRUkkqIwUXmMRhaLSy8Oih6CYv6N3xb6J8eNj1fTpEH0hV85IJEoc9ThVLvNuDzJ9fviYthesWmL-xCPZQYorkh0lbDHHYA4goK_FaZ1BGYQ8kGks70kpBJqtAQTn12HFELCJNz6XoyAEz_4j3fEmyV3VGg8Fy2QSuAmt5byKo"/>
+<div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-sm p-4 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label font-bold text-xs uppercase tracking-tighter">Principal Engineer</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Project Section 01 - Large Block -->
+<section class="mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+<div class="lg:col-span-7 bg-primary-container p-12 flex flex-col justify-between order-2 lg:order-1">
+<div>
+<span class="font-label font-bold text-on-primary-fixed-variant text-sm tracking-[0.2em] uppercase mb-4 block">01 / Interactive Systems</span>
+<h2 class="font-headline font-extrabold text-4xl md:text-6xl text-on-primary-container tracking-tighter leading-none mb-8">Gesture-Controlled Audio Plugin Interface</h2>
+<p class="text-lg text-on-primary-fixed-variant max-w-xl mb-12 leading-relaxed">Innovative spatial audio control mapping hand gestures to complex synthesis parameters in real-time environments.</p>
+</div>
+<div class="flex flex-wrap gap-3 items-center">
+<span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">C++</span>
+<span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">JUCE</span>
+<span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">OpenCV</span>
+<a class="ml-auto flex items-center gap-2 font-label font-bold text-on-primary-container hover:underline" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span> GitHub
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-5 h-[400px] lg:h-auto order-1 lg:order-2">
+<img alt="Audio Interface UI" class="w-full h-full object-cover" data-alt="Modern high-tech audio interface design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC9DqhRHiVbvx_nKLYWqfTnnOtLiF46vcC-LymR1Lqu_eYQJ__WE5FNYXSPhMJD8j6aoWYJnAfRHjzo874jKiZ3ipEmlImzj50Grs1tFXmlZ2PM6oKIqnbOC4YMeT_1PwW5qgofb3Od51UmaPchpHmWgbxGh8C1UDzUBgjfr3fWvUKRhz2QVAwNF4oCf8x9XhnVwNn262Hv1fywkuHYeu3EkiVEHzRpBMhfXq5soGI2w78bHmr_h11RPHFiucyVDRm7GJi4lngZRT9"/>
+</div>
+</div>
+</section>
+<!-- Project Section 02 - Asymmetric Bento -->
+<section class="mb-24 grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-5 bg-secondary-container p-12 flex flex-col justify-between h-[600px]">
+<div class="h-64 mb-8">
+<img alt="Robot Surgery" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Robot assisted surgery computational model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxKdqy_IteY5PP-w1RztW5w7733cwnexscBCF_tD8onICDU4RQgwbGZaiBHYfIhKGSZEoRamYyj2dac4EJdyaUvVgTihkNzUuSAqu9BJ-e4kumfw0mQIp5YLqk4dz4DSX3NmlcqMlhoJ60Pg3H2OBpOpEX-8nr-j7avyfGYdwaYOpAviD1Wf75JAuCiBRLSoJR-6oLyhRMH3Y-T9FhSTZneW5G2WLndQfSk745glChXK9VJqIIi4uMV8ZOo_UK4jDKwYEX-Vh3k3B1"/>
+</div>
+<div>
+<span class="font-label font-bold text-on-secondary-container text-sm tracking-[0.2em] uppercase mb-4 block">02 / Medical Robotics</span>
+<h3 class="font-headline font-bold text-3xl text-on-secondary-container leading-tight mb-6">Computational Framework for Robot-Assisted Surgery</h3>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="text-[10px] font-bold border border-on-secondary-container/30 px-3 py-1 uppercase">Python</span>
+<span class="text-[10px] font-bold border border-on-secondary-container/30 px-3 py-1 uppercase">ROS</span>
+<span class="text-[10px] font-bold border border-on-secondary-container/30 px-3 py-1 uppercase">PyTorch</span>
+</div>
+<a class="flex items-center gap-2 font-label font-bold text-on-secondary-container group" href="#">
+                        VIEW REPOSITORY <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="east">east</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col gap-6">
+<!-- Project 03 -->
+<div class="bg-tertiary-container p-12 flex flex-col md:flex-row gap-8 flex-1 items-center">
+<div class="flex-1">
+<span class="font-label font-bold text-on-tertiary-container text-sm tracking-[0.2em] uppercase mb-2 block">03 / Data Visualization</span>
+<h3 class="font-headline font-bold text-3xl text-on-tertiary-container leading-tight mb-4">Interactive Data-Driven Structural Analysis</h3>
+<div class="flex gap-4">
+<span class="text-[10px] font-bold text-on-tertiary-container/70 uppercase">D3.js / WebGL / Rust</span>
+</div>
+</div>
+<div class="w-full md:w-48 h-48 shrink-0 bg-surface/40 backdrop-blur overflow-hidden">
+<img alt="Structural Analysis" class="w-full h-full object-cover" data-alt="Abstract heat map of structural stress" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMx7dfyoZWfRPUWryo-uzBP_MFHSKxxgQ5PDNHeaBxNzlkzNq3YMAbAXvzjreAfBJdyN3Rntuw_yyAsqsp7_GKAORZUKmYBQ0303q2FDxiFgC5LJSfXBnV99lSgK0tA40yNoKtYPG-THxM0sDoYcp6BySTWQ0Ah48Dc5rL-KV0OHjoJAcXBX5nc4-sKtaw2Oim5IzyVQL6lDViac_0Ui2q4b1niuwirVbm44isZPdCBJ635z1DTVC7WOAiRYRojORcItTNXG3qnx3X"/>
+</div>
+</div>
+<!-- Project 04 -->
+<div class="bg-surface-container-highest p-12 flex flex-col md:flex-row-reverse gap-8 flex-1 items-center">
+<div class="flex-1">
+<span class="font-label font-bold text-on-surface text-sm tracking-[0.2em] uppercase mb-2 block">04 / Machine Learning</span>
+<h3 class="font-headline font-bold text-3xl text-on-surface leading-tight mb-4">Predictive Clinical Diagnostics</h3>
+<p class="text-on-surface-variant text-sm mb-6">Early detection algorithms for pathology identification in high-resolution medical imaging.</p>
+<a class="text-primary font-bold text-xs uppercase underline decoration-2 underline-offset-4" href="#">Read Technical Whitepaper</a>
+</div>
+<div class="w-full md:w-48 h-48 shrink-0 relative">
+<img alt="Clinical Diagnostics" class="w-full h-full object-cover rounded-full" data-alt="Microscopic medical imaging visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM9J2rSJUmUNxT3O3Xtk0eTxsAL1-YnYXp4UM6vbBk9blwzuWpnAI-YdwphEJKGNJj_TBjMpohtzBjDvMkBsW8utZ8JUWVSYeN4KGmE1_G8iT6ooea6oIGaTrqLQ3-XjBLq8BIeYyT3La_BCpFxogbbthoZNick_enB_t_7QUjQyUOgMJi70q7sRM1HokpJEwZXui8eCYltdSI-e_mNHCNNSJ21hzzFdJ-si1fKwelel4tCMfigpqKsQ_Ine3NPw5YEWPs7OwP0Lhc"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Project 05 - Full Width Textual -->
+<section class="mb-24">
+<div class="bg-[#373926] p-12 md:p-24 text-surface relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-12">
+<div class="max-w-2xl">
+<span class="font-label font-bold text-secondary-fixed text-sm tracking-[0.3em] uppercase mb-6 block">05 / Web Systems</span>
+<h2 class="font-headline font-black text-5xl md:text-7xl tracking-tighter leading-none mb-8">Full-stack Developer Portfolio</h2>
+<p class="text-surface/70 text-lg leading-relaxed mb-8">Engineering a bespoke digital presence that balances high-end editorial aesthetics with robust technical performance and accessible architecture.</p>
+<div class="flex gap-6">
+<span class="text-xs font-bold tracking-widest text-secondary-fixed">NEXT.JS</span>
+<span class="text-xs font-bold tracking-widest text-secondary-fixed">TAILWIND CSS</span>
+<span class="text-xs font-bold tracking-widest text-secondary-fixed">TYPESCRIPT</span>
+</div>
+</div>
+<div>
+<a class="w-32 h-32 rounded-full border border-surface/30 flex items-center justify-center hover:bg-surface hover:text-[#373926] transition-all duration-500 group" href="#">
+<span class="material-symbols-outlined text-4xl group-hover:rotate-45 transition-transform" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent"></div>
+</div>
+</section>
+<!-- Editorial Quote -->
+<section class="py-24 border-t border-outline-variant/20 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-6xl text-primary mb-8" data-icon="architecture">architecture</span>
+<p class="font-headline font-medium text-3xl md:text-5xl max-w-4xl italic tracking-tight text-on-surface-variant">
+                "Where computational rigor meets human-centered design, we find the future of clinical intervention."
+            </p>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-8 mt-20 bg-[#fbfaea] dark:bg-slate-900 border-none">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-screen-2xl mx-auto">
+<div class="text-lg font-bold text-[#373926] dark:text-[#fffcf0] font-headline">Jesse Oh</div>
+<div class="flex flex-col items-center gap-4">
+<div class="flex gap-8">
+<a class="font-headline font-medium text-[11px] tracking-widest uppercase text-[#373926]/60 dark:text-slate-400 hover:text-[#a94528] transition-all hover:underline decoration-2 underline-offset-4" href="#">LinkedIn</a>
+<a class="font-headline font-medium text-[11px] tracking-widest uppercase text-[#373926]/60 dark:text-slate-400 hover:text-[#a94528] transition-all hover:underline decoration-2 underline-offset-4" href="#">Dribbble</a>
+<a class="font-headline font-medium text-[11px] tracking-widest uppercase text-[#373926]/60 dark:text-slate-400 hover:text-[#a94528] transition-all hover:underline decoration-2 underline-offset-4" href="#">Read.cv</a>
+</div>
+<p class="font-headline font-medium text-[11px] tracking-widest uppercase text-[#373926]/40 dark:text-slate-500">
+                    © 2024 Jesse Oh. All rights reserved.
+                </p>
+</div>
+<button class="group flex items-center gap-2 text-[#a94528] font-headline font-bold text-[11px] uppercase tracking-widest" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                Back to top <span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform" data-icon="north">north</span>
+</button>
+</div>
+</footer>
+</body></html>
