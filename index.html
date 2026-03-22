@@ -139,7 +139,7 @@
     </div>
     <div class="col-span-12 lg:col-span-4 mt-12 lg:mt-0">
       <div class="relative aspect-square overflow-hidden bg-surface-container-highest flex items-center justify-center">
-        <span class="font-headline font-black text-[8rem] text-primary/20 select-none leading-none">JO</span>
+        <img src="assets/images/headshot.JPG" alt="Jesse Oh" class="w-full h-full object-cover" style="object-position: center 15%;"/>
         <div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-sm p-4 flex justify-between items-center">
           <span class="font-label font-bold text-xs uppercase tracking-tighter">Based in LA / Austin</span>
           <span class="material-symbols-outlined text-primary">location_on</span>
@@ -148,36 +148,72 @@
     </div>
   </header>
 
-  <!-- Project 01 — Human-Cobot Proximity Pipeline -->
-  <section id="projects" class="mb-24">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
-      <div class="lg:col-span-7 bg-primary-container p-12 flex flex-col justify-between order-2 lg:order-1">
+  <!-- About -->
+  <section id="about" class="mb-24 pt-8 border-t border-outline-variant/20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+      <div class="md:col-span-4">
+        <span class="font-label font-bold text-on-surface-variant text-sm tracking-[0.2em] uppercase mb-4 block">About</span>
+        <h2 class="font-headline font-black text-5xl tracking-tighter text-on-surface leading-none">Jesse Oh</h2>
+      </div>
+      <div class="md:col-span-8 flex flex-col gap-10">
+        <!-- Engineering -->
         <div>
-          <span class="font-label font-bold text-on-primary-fixed-variant text-sm tracking-[0.2em] uppercase mb-4 block">01 / AI &amp; Robotics</span>
-          <h2 class="font-headline font-extrabold text-4xl md:text-6xl text-on-primary-container tracking-tighter leading-none mb-4">Human-Cobot Proximity Pipeline</h2>
-          <p class="font-label font-bold text-on-primary-fixed-variant/60 text-xs uppercase tracking-[0.2em] mb-8">CogniEdge AI</p>
-          <p class="text-lg text-on-primary-fixed-variant mb-12 leading-relaxed">Developed a real-time human-cobot proximity and awareness pipeline on an NVIDIA Jetson Orin for CogniEdge's CEDR framework — a neuroadaptive human-robot collaboration system targeting EV battery assembly lines. Work included deploying and validating a YOLO person-detection model on CUDA, building a blink-detection module with RealSense camera integration (resolving a zombie process blocking the device), and training a custom YOLOv8n letter-detection model on 31 annotated Roboflow images for 100 epochs (~18 min on Jetson GPU), achieving 90% precision and exporting as a TensorRT engine. Also contributed to a React/Node.js telemetry dashboard visualizing live pipeline outputs.</p>
+          <p class="text-on-surface-variant text-lg leading-relaxed">
+            Engineer focused on computational mechanics, data-driven systems, and robotic-assisted surgery — bridging high-fidelity numerical analysis with predictive modeling to push the boundaries of patient-specific diagnostics. Currently based between <span class="text-on-surface font-semibold">Los Angeles</span> and <span class="text-on-surface font-semibold">Austin</span>.
+          </p>
         </div>
-        <div class="flex flex-wrap gap-3 items-center">
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Python</span>
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">YOLOv8</span>
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">TensorRT</span>
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">CUDA</span>
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Jetson Orin</span>
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">RealSense</span>
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">React</span>
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Node.js</span>
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Roboflow</span>
-          <span class="bg-primary text-on-primary px-4 py-1.5 rounded-full font-label text-xs font-bold uppercase tracking-tight">Digital Twins</span>
-          <span class="ml-auto font-label font-bold text-on-primary-container/50 text-xs uppercase tracking-tight">Industry Project — CogniEdge AI</span>
+        <!-- Music -->
+        <div class="border-l-2 border-secondary pl-8">
+          <span class="font-label font-bold text-secondary text-xs tracking-[0.2em] uppercase mb-3 block">Creative</span>
+          <p class="text-on-surface-variant leading-relaxed">
+            The same analytical brain that reverse-engineers systems also reverse-engineers sound. As a self-taught producer working in Ableton Live and FL Studio — with a grounding in signal flow, gain staging, and audio repair — Jesse applies engineering precision to electronic music production.
+          </p>
         </div>
       </div>
-      <div class="lg:col-span-5 order-1 lg:order-2 flex flex-col bg-[#1a1a1a]">
-        <video class="w-full h-auto" autoplay loop muted playsinline style="display:block;">
-          <source src="assets/videos/cogniedge-clip.mp4" type="video/mp4"/>
-        </video>
-        <img alt="CogniEdge annotation" src="assets/images/cogniedge-annotation.jpg" loading="lazy" style="width:100%;max-height:160px;object-fit:cover;object-position:center;display:block;"/>
-        <img alt="CogniEdge metrics" src="assets/images/cogniedge-metrics.jpg" loading="lazy" style="width:100%;max-height:160px;object-fit:cover;object-position:center;display:block;"/>
+    </div>
+  </section>
+
+  <!-- Project 01 — Human-Cobot Proximity Pipeline -->
+  <section id="projects" class="mb-24 bg-primary-container px-12 py-16 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+    <div class="lg:col-span-5 sticky top-32">
+      <div class="space-y-8">
+        <div class="space-y-2">
+          <p class="font-label text-[0.75rem] uppercase tracking-widest text-primary font-bold">01 / AI &amp; ROBOTICS</p>
+          <h1 class="font-headline text-5xl lg:text-7xl leading-[0.9] tracking-tighter uppercase">Human-Cobot<br/>Proximity<br/>Pipeline</h1>
+        </div>
+        <div class="space-y-6 max-w-lg">
+          <p class="font-body text-lg leading-relaxed text-secondary">Developed a real-time human-cobot proximity and awareness pipeline on an NVIDIA Jetson Orin for CogniEdge's CEDR framework — a neuroadaptive human-robot collaboration system targeting EV battery assembly lines. Work included deploying and validating a YOLO person-detection model on CUDA, building a blink-detection module with RealSense camera integration, and training a custom YOLOv8n letter-detection model achieving 90% precision exported as a TensorRT engine.</p>
+          <div class="grid grid-cols-2 gap-8 pt-4">
+            <div><h4 class="font-label text-[0.7rem] uppercase tracking-widest text-outline mb-2">Technical Role</h4><p class="font-body text-sm font-bold uppercase">CV / ML Engineer</p></div>
+            <div><h4 class="font-label text-[0.7rem] uppercase tracking-widest text-outline mb-3">Stack</h4><div class="flex flex-wrap gap-2"><span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label text-[0.65rem] font-bold uppercase tracking-tight">YOLOv8</span><span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label text-[0.65rem] font-bold uppercase tracking-tight">TensorRT</span><span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label text-[0.65rem] font-bold uppercase tracking-tight">Python</span><span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label text-[0.65rem] font-bold uppercase tracking-tight">CUDA</span><span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label text-[0.65rem] font-bold uppercase tracking-tight">Roboflow</span><span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label text-[0.65rem] font-bold uppercase tracking-tight">Jetson Orin</span><span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label text-[0.65rem] font-bold uppercase tracking-tight">RealSense</span><span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label text-[0.65rem] font-bold uppercase tracking-tight">React</span><span class="bg-primary text-on-primary px-3 py-1 rounded-full font-label text-[0.65rem] font-bold uppercase tracking-tight">Node.js</span></div></div>
+          </div>
+          <div class="pt-6"><span class="bg-surface-container-high text-on-surface px-8 py-4 font-label text-[0.8rem] font-bold uppercase tracking-widest">Intern Project — CogniEdge AI</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-7 space-y-4">
+      <div class="relative bg-surface-container-high aspect-video overflow-hidden">
+        <video autoplay loop muted playsinline class="w-full h-full object-cover" src="assets/videos/cogniedge-clip.mp4"></video>
+        <div class="absolute bottom-6 left-6 z-20 bg-on-background text-surface px-3 py-1 font-label text-[0.6rem] uppercase tracking-widest">Live Demo</div>
+      </div>
+      <div class="relative w-full aspect-[4/3] bg-surface-container-low overflow-hidden">
+        <img alt="CogniEdge AI pipeline" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" src="assets/images/cogniedge.jpg"/>
+        <div class="absolute top-6 left-6 font-label text-[0.65rem] uppercase tracking-widest bg-surface/90 px-3 py-1">Pipeline Overview</div>
+        <div class="absolute bottom-8 right-8 w-64 bg-on-background p-6 shadow-2xl">
+          <div class="space-y-4">
+            <div class="flex justify-between items-end border-b border-surface/20 pb-2"><span class="font-label text-[0.6rem] text-surface/60 uppercase tracking-widest">mAP @ .50</span><span class="font-headline text-2xl text-surface tracking-tighter">99.1%</span></div>
+            <div class="flex justify-between items-end border-b border-surface/20 pb-2"><span class="font-label text-[0.6rem] text-surface/60 uppercase tracking-widest">Precision</span><span class="font-headline text-2xl text-surface tracking-tighter">98.8%</span></div>
+            <div class="flex justify-between items-end border-b border-surface/20 pb-2"><span class="font-label text-[0.6rem] text-surface/60 uppercase tracking-widest">Recall</span><span class="font-headline text-2xl text-surface tracking-tighter">98.7%</span></div>
+            <div class="pt-2"><img alt="Model metrics" class="w-full h-24 object-cover opacity-80 hover:opacity-100 transition-opacity" src="assets/images/cogniedge-metrics.jpg"/><p class="mt-3 font-label text-[0.55rem] text-surface/40 uppercase tracking-[0.2em] text-center">System Performance Metrics</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-surface-container-high p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div class="flex gap-4 items-center"><span class="material-symbols-outlined text-primary">terminal</span><span class="font-label text-[0.7rem] uppercase tracking-widest font-bold">Core Infrastructure Pipeline</span></div>
+        <div class="flex gap-8">
+          <div class="text-right"><span class="block font-label text-[0.55rem] text-outline uppercase tracking-widest mb-1">Precision</span><span class="font-body text-xs font-bold uppercase">98.8%</span></div>
+          <div class="text-right"><span class="block font-label text-[0.55rem] text-outline uppercase tracking-widest mb-1">mAP@50</span><span class="font-body text-xs font-bold uppercase">99.1%</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -323,30 +359,6 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="mb-24 pt-8 border-t border-outline-variant/20">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-      <div class="md:col-span-4">
-        <span class="font-label font-bold text-on-surface-variant text-sm tracking-[0.2em] uppercase mb-4 block">About</span>
-        <h2 class="font-headline font-black text-5xl tracking-tighter text-on-surface leading-none">Jesse Oh</h2>
-      </div>
-      <div class="md:col-span-8 flex flex-col gap-10">
-        <!-- Engineering -->
-        <div>
-          <p class="text-on-surface-variant text-lg leading-relaxed">
-            Engineer focused on computational mechanics, data-driven systems, and robotic-assisted surgery — bridging high-fidelity numerical analysis with predictive modeling to push the boundaries of patient-specific diagnostics. Currently based between <span class="text-on-surface font-semibold">Los Angeles</span> and <span class="text-on-surface font-semibold">Austin</span>.
-          </p>
-        </div>
-        <!-- Music -->
-        <div class="border-l-2 border-secondary pl-8">
-          <span class="font-label font-bold text-secondary text-xs tracking-[0.2em] uppercase mb-3 block">Creative</span>
-          <p class="text-on-surface-variant leading-relaxed">
-            The same analytical brain that reverse-engineers systems also reverse-engineers sound. As a self-taught producer working in Ableton Live, Pro Tools, and iZotope RX 11 — with a grounding in signal flow, gain staging, and audio repair — Jesse applies engineering precision to electronic music spanning House, Techno, and Festival EDM, as well as more textural, organic work. He also plays nylon string guitar by ear.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </main>
 
